@@ -7,6 +7,7 @@ So, you want to have a statically generated blog? And you decided that jekyll is
 Makefile - contains some docker based commands to build and deploy a jekyll website
 s3_website.yml (copied into the github_actions_jekyll subdirectory) -- sets the s3 creds/bucket information
 .github/workflows -- the actual actions definitions.  All branches will do the jekyll build.  Master pushes will actually push to s3.
+github_actions_jekyll/_config.yml-- move to config
 
 # Setting up aws
 

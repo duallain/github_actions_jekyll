@@ -1,6 +1,6 @@
 release: build push
 
-sitename := "/tmp"
+sitename := github_actions_jekyll
 
 generate :
 	docker run --rm --label=jekyll --volume=$(CURDIR):/srv/jekyll jekyll/jekyll jekyll new $(sitename)
