@@ -1,0 +1,21 @@
+name: CY
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: chmod
+      run: chmod 777 .
+    - name: build the static content
+      run: make build
+    - name: push static content
+      run: make push
+      env:
+        S3_ID: ${{ secrets.AWS_ACCESS_KEY }}
+        S3_SECRET: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
